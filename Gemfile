@@ -33,4 +33,5 @@ group :development, :test do
   gem 'spork'
   gem 'cucumber'
   gem 'cucumber-rails'
+  gem 'capybara'
 end
