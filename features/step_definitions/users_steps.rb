@@ -25,8 +25,8 @@ When /^I log in as the user$/ do
   click_button("Sign in")
 end
 
-When /^I click on "([^"]*)"$/ do |arg1|
-  click_link "logout"
+When /^I click on "([^"]*)"$/ do |link|
+  click_link link
 end
 
 Then /^I should be logged in$/ do
