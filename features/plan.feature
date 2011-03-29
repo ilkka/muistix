@@ -9,3 +9,10 @@ Feature: Plans
     When I go to the home page
     Then I should see my plans
 
+  @wip
+  Scenario: Show one plan
+    Given I am logged in
+    And I have made plans
+    When I go to the home page
+    And I select a plan
+    Then I should see the steps for that plan
