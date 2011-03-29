@@ -22,3 +22,18 @@ Then /^I should be logged in$/ do
   page.should have_xpath("//li/a", :text => /logout/)
 end
 
+Given /^I am logged in$/ do
+  Given %(I am not logged in)
+  Given %(a User with email "foobar@example.com" with password "pass1234")
+  When %(I log in as "foobar@example.com"/"pass1234")
+  Then %(I should be logged in)
+end
+
+When /^I click on "([^"]*)"$/ do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should not be logged in$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
