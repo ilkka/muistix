@@ -3,8 +3,12 @@
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "selectors"))
 
+Given /^I am not logged in$/ do
+  visit destroy_user_session_path
+end
+
 Given /^a User with email "([^"]*)" with password "([^"]*)"$/ do |email, pass|
-  User.make(:email => email, :password => pass)
+  User.make!(:email => email, :password => pass)
 end
 
 When /^I log in as "([^"]*)"\/"([^"]*)"$/ do |email, pass|
