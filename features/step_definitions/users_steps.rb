@@ -30,10 +30,10 @@ Given /^I am logged in$/ do
 end
 
 When /^I click on "([^"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+  click_link "logout"
 end
 
 Then /^I should not be logged in$/ do
-  pending # express the regexp above with the code you wish you had
+  page.should have_xpath("//li/a", :text => /login/)
 end
 
