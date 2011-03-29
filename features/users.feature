@@ -3,11 +3,12 @@ Feature: Users
   users
   should be able to register, log in and log out
 
+  @wip
   Scenario: Log in as registered user
     Given I am not logged in
-    And a User with email "joebob@example.com" with password "leet23sala"
+    And a User exists
     When I go to the home page
-    And I log in as "joebob@example.com"/"leet23sala"
+    And I log in as the user
     Then I should be logged in
 
   @wip
