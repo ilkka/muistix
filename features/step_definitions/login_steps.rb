@@ -9,8 +9,8 @@ end
 
 When /^I log in as "([^"]*)"\/"([^"]*)"$/ do |email, pass|
   click_link("login")
-  fill_in("email", :with => email)
-  fill_in("password", :with => pass)
+  fill_in("user_email", :with => email)
+  fill_in("user_password", :with => pass)
   click_button("Sign in")
 end
 
