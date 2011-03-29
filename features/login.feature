@@ -9,3 +9,10 @@ Feature: Login
     When I go to the home page
     And I log in as "joebob@example.com"/"leet23sala"
     Then I should be logged in
+
+  @wip
+  Scenario: Log out
+    Given I am logged in
+    When I go to the home page
+    And I click on "logout"
+    Then I should not be logged in
