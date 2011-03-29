@@ -15,3 +15,12 @@ Feature: Plans
     When I go to the home page
     And I select a plan
     Then I should see the steps for that plan
+
+  @wip
+  Scenario: Create new plan
+    Given I am logged in
+    When I create a new plan
+    And I go to the home page
+    Then I should see the plan
+    When I select the plan
+    Then I should see the steps for that plan
