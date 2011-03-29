@@ -7,14 +7,14 @@ Given /^I am not logged in$/ do
   visit destroy_user_session_path
 end
 
-Given /^a User with email "([^"]*)" with password "([^"]*)"$/ do |email, pass|
-  User.make!(:email => email, :password => pass)
+Given /^a User exists$/ do
+  @user = User.make!
 end
 
-When /^I log in as "([^"]*)"\/"([^"]*)"$/ do |email, pass|
+When /^I log in as the user$/ do
   click_link("login")
-  fill_in("user_email", :with => email)
-  fill_in("user_password", :with => pass)
+  fill_in("user_email", :with => @user.email)
+  fill_in("user_password", :with => @user.password)
   click_button("Sign in")
 end
 
@@ -24,8 +24,8 @@ end
 
 Given /^I am logged in$/ do
   Given %(I am not logged in)
-  Given %(a User with email "foobar@example.com" with password "pass1234")
-  When %(I log in as "foobar@example.com"/"pass1234")
+  Given %(a User exists)
+  When %(I log in as the user)
   Then %(I should be logged in)
 end
 
