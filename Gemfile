@@ -9,7 +9,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'haml'
 gem 'haml-rails'
-gem "nested_form", :git => "git://github.com/madebydna/nested_form.git"
+gem "nested_form", :git => "https://github.com/madebydna/nested_form.git"
 
 # Use unicorn as the web server
 # gem 'unicorn'
