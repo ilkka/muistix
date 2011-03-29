@@ -3,7 +3,6 @@ Feature: Users
   users
   should be able to register, log in and log out
 
-  @wip
   Scenario: Log in as registered user
     Given I am not logged in
     And a User exists
@@ -11,7 +10,6 @@ Feature: Users
     And I log in as the user
     Then I should be logged in
 
-  @wip
   Scenario: Log out
     Given I am logged in
     When I go to the home page
