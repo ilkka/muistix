@@ -15,6 +15,6 @@ When /^I log in as "([^"]*)"\/"([^"]*)"$/ do |email, pass|
 end
 
 Then /^I should be logged in$/ do
-  pending # express the regexp above with the code you wish you had
+  page.should have_xpath("//li/a", :text => /logout/)
 end
 
