@@ -8,8 +8,7 @@
 
   - @plans.each do |plan|
     %tr
-      %td= plan.description
-      %td= link_to 'Show', plan
+      %td= link_to plan.description, plan
       %td= link_to 'Edit', edit_plan_path(plan)
       %td= link_to 'Destroy', plan, :confirm => 'Are you sure?', :method => :delete
 
