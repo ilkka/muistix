@@ -7,12 +7,13 @@ User.blueprint do
   password_confirmation { password }
 end
 
-Plan.blueprint do
-  description { Faker::Lorem.sentence }
-end
-
 Step.blueprint do
   objective { Faker::Lorem.sentence }
   uri { "http://" + Faker::Internet.domain_name + "/some/thing" }
-  plan
 end
+
+Plan.blueprint do
+  description { Faker::Lorem.sentence }
+  steps(3)
+end
+
