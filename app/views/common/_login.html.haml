@@ -1,0 +1,6 @@
+%ul
+  - if user_signed_in?
+    %li= link_to "logout", destroy_user_session_path
+  - else
+    %li= link_to "login", new_user_session_path
+

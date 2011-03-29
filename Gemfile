@@ -7,6 +7,8 @@ gem 'rails', '3.0.5'
 
 gem 'sqlite3'
 gem 'devise'
+gem 'haml'
+gem 'haml-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -33,5 +35,9 @@ group :development, :test do
   gem 'spork'
   gem 'cucumber'
   gem 'cucumber-rails'
+  gem 'database_cleaner'
   gem 'capybara'
+  gem 'machinist', '~> 2.0.0.beta2'
+  gem 'faker'
+  gem 'launchy'
 end
