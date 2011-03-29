@@ -1,4 +1,6 @@
 class PlansController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /plans
   # GET /plans.xml
   def index
