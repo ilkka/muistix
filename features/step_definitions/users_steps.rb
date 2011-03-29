@@ -11,17 +11,6 @@ Given /^a User exists$/ do
   @user = User.make!
 end
 
-When /^I log in as the user$/ do
-  click_link("login")
-  fill_in("user_email", :with => @user.email)
-  fill_in("user_password", :with => @user.password)
-  click_button("Sign in")
-end
-
-Then /^I should be logged in$/ do
-  page.should have_xpath("//li/a", :text => /logout/)
-end
-
 Given /^I am logged in$/ do
   Given %(I am not logged in)
   Given %(a User exists)
@@ -29,8 +18,19 @@ Given /^I am logged in$/ do
   Then %(I should be logged in)
 end
 
+When /^I log in as the user$/ do
+  click_link("login")
+  fill_in("user_email", :with => @user.email)
+  fill_in("user_password", :with => @user.password)
+  click_button("Sign in")
+end
+
 When /^I click on "([^"]*)"$/ do |arg1|
   click_link "logout"
+end
+
+Then /^I should be logged in$/ do
+  page.should have_xpath("//li/a", :text => /logout/)
 end
 
 Then /^I should not be logged in$/ do
