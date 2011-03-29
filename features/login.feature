@@ -3,7 +3,6 @@ Feature: Login
   registered users
   should be able to log in
 
-  @wip
   Scenario: Log in as registered user
     Given I am not logged in
     And a User with email "joebob@example.com" with password "leet23sala"
