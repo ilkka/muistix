@@ -19,3 +19,17 @@ Then /^I should see the steps for that plan$/ do
   end
 end
 
+When /^I create a new plan$/ do
+  plan = Plan.make
+  click_link 'New Plan'
+  fill_in "plan_description", :with => plan.description
+end
+
+Then /^I should see the plan$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+When /^I select the plan$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
