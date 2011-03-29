@@ -5,7 +5,8 @@ Feature: Login
 
   @wip
   Scenario: Log in as registered user
-    Given a User with email "joebob@example.com" with password "leet23sala"
+    Given I am not logged in
+    And a User with email "joebob@example.com" with password "leet23sala"
     When I go to the home page
     And I log in as "joebob@example.com"/"leet23sala"
     Then I should be logged in
