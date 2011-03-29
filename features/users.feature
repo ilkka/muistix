@@ -15,3 +15,10 @@ Feature: Users
     When I go to the home page
     And I click on "logout"
     Then I should not be logged in
+
+  @wip
+  Scenario: Register
+    Given I am not logged in
+    When I go to the home page
+    And I register
+    Then I should be logged in
