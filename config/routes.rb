@@ -1,4 +1,6 @@
 Muistix::Application.routes.draw do
+  resources :plans
+
   devise_for :users
 
   # The priority is based upon order of creation:
