@@ -2,6 +2,7 @@
 require 'machinist/active_record'
 
 User.blueprint do
-  email { Faker::Lorem.words(1).first.downcase }
-  password { Faker::Lorem.words(1).first.downcase }
+  email { Faker::Internet.email }
+  password { 'secret1234' }
+  password_confirmation { password }
 end
