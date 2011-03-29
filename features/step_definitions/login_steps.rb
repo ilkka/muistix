@@ -8,9 +8,10 @@ Given /^a User with email "([^"]*)" with password "([^"]*)"$/ do |email, pass|
 end
 
 When /^I log in as "([^"]*)"\/"([^"]*)"$/ do |email, pass|
+  click_link("login")
   fill_in("email", :with => email)
   fill_in("password", :with => pass)
-  click_button("login")
+  click_button("Sign in")
 end
 
 Then /^I should be logged in$/ do
