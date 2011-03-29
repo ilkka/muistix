@@ -29,6 +29,14 @@ When /^I click on "([^"]*)"$/ do |link|
   click_link link
 end
 
+When /^I register$/ do
+  user = User.make
+  click_link "register"
+  fill_in "user_email", :with => user.email
+  fill_in "user_password", :with => user.password
+  click_button "Sign up"
+end
+
 Then /^I should be logged in$/ do
   page.should have_xpath("//li/a", :text => /logout/)
 end
