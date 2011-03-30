@@ -23,4 +23,4 @@ Feature: Plans
     And I go to the home page
     Then I should see the plan
     When I select the plan
-    Then I should see the steps for that plan
+    Then I should see the steps for the newly-created plan
