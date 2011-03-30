@@ -6,5 +6,9 @@
         - @plan.errors.full_messages.each do |msg|
           %li= msg
 
+  .inputs
+    = f.label :description, "Description"
+    = f.text_field :description
+
   .actions
     = f.submit 'Save'
