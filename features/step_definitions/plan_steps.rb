@@ -27,7 +27,7 @@ When /^I create a new plan$/ do
 end
 
 Then /^I should see the plan$/ do
-  pending
+  page.should have_content @my_new_plan.description
 end
 
 When /^I select the plan$/ do
