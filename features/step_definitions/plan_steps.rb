@@ -31,6 +31,6 @@ Then /^I should see the plan$/ do
 end
 
 When /^I select the plan$/ do
-  pending # express the regexp above with the code you wish you had
+  click_link @my_new_plan.description
 end
 
