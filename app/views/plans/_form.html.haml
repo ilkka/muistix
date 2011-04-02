@@ -1,4 +1,4 @@
-= form_for @plan do |f|
+= nested_form_for @plan do |f|
   -if @plan.errors.any?
     #error_explanation
       %h2= "#{pluralize(@plan.errors.count, "error")} prohibited this plan from being saved:"
@@ -9,6 +9,14 @@
   .inputs
     = f.label :description, "Description"
     = f.text_field :description
+    %br
+    - f.fields_for :steps do |step_form|
+      = step_form.label :objective, "Objective"
+      = step_form.text_field :objective
+      = step_form.label :uri, "URI"
+      = step_form.text_field :uri
+      = step_form.link_to_remove "Remove"
+    = f.link_to_add "Add step", :steps
 
   .actions
     = f.submit 'Save'
