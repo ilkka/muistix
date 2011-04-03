@@ -26,7 +26,7 @@ When /^I create a new plan$/ do
   counter = 0
   @my_new_plan.steps.each do |step|
     click_link 'Add step'
-    fill_in "Objective #{counter}", :with => step.description
+    fill_in "Objective #{counter}", :with => step.objective
     fill_in "URI #{counter}", :with => step.uri
     counter += 1
   end
@@ -43,7 +43,7 @@ end
 
 Then /^I should see the steps for the newly\-created plan$/ do
   @my_new_plan.steps.each do |step|
-    page.should have_content step.description
+    page.should have_content step.objective
     page.should have_xpath "//a", :href => step.uri
   end
 end
