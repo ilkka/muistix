@@ -1,4 +1,6 @@
+require 'uri'
+
 class Thing < ActiveRecord::Base
   validates_presence_of :description
-  validates_format_of :uri, :with => /^([a-zA-Z0-9+.-]+):(\/\/([a-zA-Z0-9-._~!$&'()*+,;=:]*)@)?([a-zA-Z0-9-._~!$&'()*+,;=]+)(:(\\d*))?(\/?[a-zA-Z0-9-._~!$&'()*+,;=:\/]+)?(\\?[a-zA-Z0-9-._~!$&'()*+,;=:\/?@]+)?(#[a-zA-Z0-9-._~!$&'()*+,;=:\/?@]+)?$(:(\\d*))?(\/?[a-zA-Z0-9-._~!$&'()*+,;=:\/]+)?(\?[a-zA-Z0-9-._~!$&'()*+,;=:\/?@]+)?(\#[a-zA-Z0-9-._~!$&'()*+,;=:\/?@]+)?$/, :allow_nil
+  validates_format_of :uri, :with => URI::Parser.new.make_regexp()
 end
