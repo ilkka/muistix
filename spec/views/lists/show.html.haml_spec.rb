@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "plans/show.html.haml" do
+describe "lists/show.html.haml" do
   before(:each) do
-    @plan = assign(:plan, stub_model(Plan))
+    @list = assign(:list, stub_model(List))
   end
 
   it "renders attributes in <p>" do

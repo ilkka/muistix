@@ -1,0 +1,7 @@
+%h1 Listing lists
+
+%ol
+  - @lists.each do |list|
+    %li= link_to list.description, list
+
+= link_to 'New List', new_list_path

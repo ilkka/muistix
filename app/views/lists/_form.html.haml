@@ -1,9 +1,9 @@
-= nested_form_for @plan do |f|
-  -if @plan.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@plan.errors.count, "error")} prohibited this plan from being saved:"
+= nested_form_for @list do |f|
+  -if @list.errors.any?
+    #error_exlistation
+      %h2= "#{pluralize(@list.errors.count, "error")} prohibited this list from being saved:"
       %ul
-        - @plan.errors.full_messages.each do |msg|
+        - @list.errors.full_messages.each do |msg|
           %li= msg
 
   .inputs

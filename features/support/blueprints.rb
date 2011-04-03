@@ -12,7 +12,7 @@ Step.blueprint do
   uri { "http://" + Faker::Internet.domain_name + "/some/thing" }
 end
 
-Plan.blueprint do
+List.blueprint do
   description { Faker::Lorem.sentence }
   steps(3)
 end

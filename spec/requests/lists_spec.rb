@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe "Plans" do
-  describe "GET /plans" do
+describe "Lists" do
+  describe "GET /lists" do
     it "works! (now write some real specs)" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get plans_path
+      get lists_path
       response.status.should be(200)
     end
   end
