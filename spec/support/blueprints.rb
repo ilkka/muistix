@@ -6,3 +6,8 @@ User.blueprint do
   password_confirmation { object.password }
 end
 
+Thing.blueprint do
+  description { Faker::Lorem.sentence }
+  uri { "http://" + Faker::Internet.domain_name + "/some/thing" }
+end
+
