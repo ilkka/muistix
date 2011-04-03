@@ -23,7 +23,7 @@ When /^I create a new plan$/ do
   @my_new_plan = Plan.make
   click_link 'New Plan'
   fill_in "Description", :with => @my_new_plan.description
-  counter = 0
+  counter = 1
   @my_new_plan.steps.each do |step|
     click_link 'Add step'
     fill_in "Objective #{counter}", :with => step.objective
