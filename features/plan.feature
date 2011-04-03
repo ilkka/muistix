@@ -16,7 +16,7 @@ Feature: Plans
     And I select a plan
     Then I should see the steps for that plan
 
-  @wip @javascript
+  @javascript
   Scenario: Create new plan
     Given I am logged in
     When I create a new plan
