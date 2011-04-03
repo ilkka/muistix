@@ -12,10 +12,10 @@ When /^I select a list$/ do
   click_link @list1.description
 end
 
-Then /^I should see the steps for that list$/ do
-  @list1.steps.each do |step|
-    page.should have_content(step.objective)
-    page.should have_xpath("//a", :href => step.uri)
+Then /^I should see the things for that list$/ do
+  @list1.things.each do |thing|
+    page.should have_content(thing.description)
+    page.should have_xpath("//a", :href => thing.uri)
   end
 end
 
@@ -24,10 +24,10 @@ When /^I create a new list$/ do
   click_link 'New List'
   fill_in "Description", :with => @my_new_list.description
   [0,1,2].each do |idx|
-    click_link 'Add step'
+    click_link 'Add thing'
     within :xpath, "//form/div/div[#{idx+1}]" do
-      fill_in "Objective", :with => @my_new_list.steps[idx].objective
-      fill_in "URI", :with => @my_new_list.steps[idx].uri
+      fill_in "Description", :with => @my_new_list.things[idx].description
+      fill_in "URI", :with => @my_new_list.things[idx].uri
     end
   end
   click_button 'Save'
@@ -41,9 +41,9 @@ When /^I select the list$/ do
   click_link @my_new_list.description
 end
 
-Then /^I should see the steps for the newly\-created list$/ do
-  @my_new_list.steps.each do |step|
-    page.should have_content step.objective
-    page.should have_xpath "//a", :href => step.uri
+Then /^I should see the things for the newly\-created list$/ do
+  @my_new_list.things.each do |thing|
+    page.should have_content thing.description
+    page.should have_xpath "//a", :href => thing.uri
   end
 end

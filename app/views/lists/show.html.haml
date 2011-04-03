@@ -9,5 +9,5 @@
 = link_to 'Back', lists_path
 
 %ol
-  - @list.steps.each do |step|
-    %li= link_to step.objective, step.uri
+  - @list.things.each do |thing|
+    %li= link_to thing.description, thing.uri

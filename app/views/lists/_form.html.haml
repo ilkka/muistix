@@ -10,14 +10,14 @@
     = f.label :description, "Description"
     = f.text_field :description
     %br
-    = f.fields_for :steps do |step_form|
-      = step_form.label :objective, "Objective"
-      = step_form.text_field :objective
-      = step_form.label :uri, "URI"
-      = step_form.text_field :uri
-      = step_form.link_to_remove "Remove"
+    = f.fields_for :things do |thing_form|
+      = thing_form.label :description, "Description"
+      = thing_form.text_field :description
+      = thing_form.label :uri, "URI"
+      = thing_form.text_field :uri
+      = thing_form.link_to_remove "Remove"
 
-    = f.link_to_add "Add step", :steps
+    = f.link_to_add "Add thing", :things
 
   .actions
     = f.submit 'Save'

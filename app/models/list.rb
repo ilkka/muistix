@@ -1,4 +1,4 @@
 class List < ActiveRecord::Base
-  has_many :steps
-  accepts_nested_attributes_for :steps
+  has_many :things
+  accepts_nested_attributes_for :things
 end
