@@ -42,6 +42,8 @@ When /^I select the plan$/ do
 end
 
 Then /^I should see the steps for the newly\-created plan$/ do
-  page.should have_content @my_new_plan.steps.first.objective
-  page.should have_xpath "//a", :href => @my_new_plan.steps.first.uri
+  @my_new_plan.steps.each do |step|
+    page.should have_content step.objective
+    page.should have_xpath "//a", :href => step.uri
+  end
 end
