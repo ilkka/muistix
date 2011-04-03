@@ -10,12 +10,14 @@
     = f.label :description, "Description"
     = f.text_field :description
     %br
+    - counter = 1
     = f.fields_for :steps do |step_form|
-      = step_form.label :objective, "Objective"
+      = step_form.label :objective, "Objective #{counter}"
       = step_form.text_field :objective
-      = step_form.label :uri, "URI"
+      = step_form.label :uri, "URI #{counter}"
       = step_form.text_field :uri
-      = step_form.link_to_remove "Remove"
+      = step_form.link_to_remove "Remove step #{counter}"
+      - counter += 1
 
     = f.link_to_add "Add step", :steps
 
