@@ -25,7 +25,7 @@ When /^I create a new plan$/ do
   fill_in "Description", :with => @my_new_plan.description
   [0,1,2].each do |idx|
     click_link 'Add step'
-    within :xpath, "//div[@class='inputs']/div[first()+#{idx}]" do
+    within :xpath, "//form/div/div[#{idx+1}]" do
       fill_in "Objective", :with => @my_new_plan.steps[idx].objective
       fill_in "URI", :with => @my_new_plan.steps[idx].uri
     end
