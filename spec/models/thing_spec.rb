@@ -2,12 +2,21 @@ require 'spec_helper'
 
 describe Thing do
   before :each do
-    @thing = Thing.new
+    @thing = Thing.make
   end
 
   it "has to have a description" do
+    @thing.should be_valid
+    @thing.description = nil
     @thing.should_not be_valid
-    @thing.description = "This is a thing"
+  end
+
+  it "can have a valid URI as uri" do
+    @thing.uri = nil
+    @thing.should be_valid
+    @thing.uri = "http::::"
+    @thing.should_not be_valid
+    @thing.uri = "http://" + Faker::Internet.domain_name + "/some/thing"
     @thing.should be_valid
   end
 end
