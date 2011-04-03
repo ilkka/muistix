@@ -1,0 +1,23 @@
+= nested_form_for @list do |f|
+  -if @list.errors.any?
+    #error_exlistation
+      %h2= "#{pluralize(@list.errors.count, "error")} prohibited this list from being saved:"
+      %ul
+        - @list.errors.full_messages.each do |msg|
+          %li= msg
+
+  .inputs
+    = f.label :description, "Description"
+    = f.text_field :description
+    %br
+    = f.fields_for :things do |thing_form|
+      = thing_form.label :description, "Description"
+      = thing_form.text_field :description
+      = thing_form.label :uri, "URI"
+      = thing_form.text_field :uri
+      = thing_form.link_to_remove "Remove"
+
+    = f.link_to_add "Add thing", :things
+
+  .actions
+    = f.submit 'Save'
