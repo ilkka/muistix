@@ -23,10 +23,13 @@ When /^I create a new plan$/ do
   @my_new_plan = Plan.make
   click_link 'New Plan'
   fill_in "Description", :with => @my_new_plan.description
-  click_link 'Add step'
-  # only tests the first step for now, because I can't figure out how to fill the rest...
-  fill_in "Objective", :with => @my_new_plan.steps.first.objective
-  fill_in "URI", :with => @my_new_plan.steps.first.uri
+  [0,1,2].each do |idx|
+    click_link 'Add step'
+    within :xpath, "//div[@class='inputs']/div[first()+#{idx}]" do
+      fill_in "Objective", :with => @my_new_plan.steps[idx].objective
+      fill_in "URI", :with => @my_new_plan.steps[idx].uri
+    end
+  end
   click_button 'Save'
 end
 
