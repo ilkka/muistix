@@ -1,0 +1,7 @@
+%h1 Listing plans
+
+%ol
+  - @plans.each do |plan|
+    %li= link_to plan.description, plan
+
+= link_to 'New Plan', new_plan_path
