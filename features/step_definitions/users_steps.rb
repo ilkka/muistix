@@ -19,10 +19,9 @@ Given /^I am logged in$/ do
 end
 
 When /^I log in as the user$/ do
-  click_link("login")
   fill_in("user_email", :with => @user.email)
   fill_in("user_password", :with => @user.password)
-  click_button("Sign in")
+  click_link_or_button("Sign in")
 end
 
 When /^I click on "([^"]*)"$/ do |link|
@@ -31,7 +30,7 @@ end
 
 When /^I register$/ do
   user = User.make
-  click_link "register"
+  click_link "Register"
   fill_in "user_email", :with => user.email
   fill_in "user_password", :with => user.password
   fill_in "user_password_confirmation", :with => user.password
@@ -39,10 +38,10 @@ When /^I register$/ do
 end
 
 Then /^I should be logged in$/ do
-  page.should have_xpath("//li/a", :text => /logout/)
+  page.should have_xpath("//li/a", :text => /Sign out/)
 end
 
 Then /^I should not be logged in$/ do
-  page.should have_xpath("//li/a", :text => /login/)
+  page.should have_content 'Sign in'
 end
 
