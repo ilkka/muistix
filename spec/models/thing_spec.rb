@@ -14,7 +14,7 @@ describe Thing do
   it "can have a valid URI as uri" do
     @thing.uri = nil
     @thing.should be_valid
-    @thing.uri = "http::::"
+    @thing.uri = ":___;"
     @thing.should_not be_valid
     @thing.uri = "http://" + Faker::Internet.domain_name + "/some/thing"
     @thing.should be_valid
