@@ -1,5 +1,14 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before :each do
+    @user = User.make
+  end
+
+  it "must have an email" do
+    @user.email = ''
+    @user.should_not be_valid
+    @user.email = Faker::Internet.email
+    @user.should be_valid
+  end
 end
