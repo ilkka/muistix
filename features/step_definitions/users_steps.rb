@@ -38,10 +38,10 @@ When /^I register$/ do
 end
 
 Then /^I should be logged in$/ do
-  page.should have_xpath("//li/a", :text => /Sign out/)
+  page.should have_xpath('//a', :text => /Sign out/)
 end
 
 Then /^I should not be logged in$/ do
-  page.should have_content 'Sign in'
+  page.should have_content('Sign in')
 end
 

@@ -13,7 +13,7 @@ Feature: Users
   Scenario: Log out
     Given I am logged in
     When I go to the home page
-    And I click on "logout"
+    And I click on "Sign out"
     Then I should not be logged in
 
   Scenario: Register
