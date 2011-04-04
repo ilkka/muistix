@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
+
+  validates_length_of :password, :minimum => 8, :too_short => "Your password must be at least %d characters long."
 end
