@@ -3,7 +3,7 @@
     %li= link_to 'Account', edit_user_registration_path
     %li= link_to 'Sign out', destroy_user_session_path
 - else
-  - if not (current_page?(:controller => 'devise/sessions', :action => 'new') or current_page?(:controller => 'devise/sessions', :action => 'create'))
+  - if controller.controller_name != 'sessions' and controller.controller_name != 'registrations'
     = form_for 'user', :url => user_session_path do |f|
       = f.text_field :email
       = f.password_field :password
